@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Languagescount from './Languagescount';
+import Selfiefunctionality from './selfiefunctionality';
+import Copyclipboard from './Copyclipboard';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Header from './header';
+
+
+const Routing = () => {
+  return(
+    <Router>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/languagescount" component={Languagescount} />
+        <Route path="/copyclipboard" component={Copyclipboard} />
+        <Route path="/selfiefunctionality" component={Selfiefunctionality} />
+      </Switch>
+    </Router>
+  )
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routing />
   </React.StrictMode>,
   document.getElementById('root')
 );
